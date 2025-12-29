@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 229, 229, 229;
+  --background-rgb: 26, 26, 26;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+  font-family: 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace;
+}
+
+/* Custom scrollbar for Claude Code feel */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3a3a3a;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4a4a4a;
+}
+
+/* Terminal cursor animation */
+.cursor::after {
+  content: '▊';
+  animation: blink 1s step-end infinite;
+  color: #f97316;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Code block styling */
+pre {
+  background: #2a2a2a;
+  border: 1px solid #3a3a3a;
+  border-radius: 8px;
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+code {
+  font-family: 'Menlo', 'Monaco', 'Consolas', monospace;
+  font-size: 0.9em;
+}
+
+/* Markdown content styling */
+.prose {
+  color: #e5e5e5;
+}
+
+.prose h1, .prose h2, .prose h3, .prose h4 {
+  color: #f97316;
+  font-weight: 600;
+}
+
+.prose a {
+  color: #3b82f6;
+  text-decoration: none;
+}
+
+.prose a:hover {
+  text-decoration: underline;
+}
+
+.prose strong {
+  color: #ffffff;
+}
+
+.prose ul, .prose ol {
+  color: #e5e5e5;
+}
+
+.prose blockquote {
+  border-left: 3px solid #f97316;
+  padding-left: 1rem;
+  color: #888888;
+  font-style: italic;
+}
+
+/* Selection color */
+::selection {
+  background: #f9731640;
+  color: #ffffff;
+}
+
+/* Focus styles */
+*:focus {
+  outline: 2px solid #f97316;
+  outline-offset: 2px;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
